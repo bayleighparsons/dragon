@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>What Dragon Are You?</title>
+	<style>
+		h1 {
+			text-align: center;
+		}
+		div {
+			opacity: 1.0;
+		}
+		#submit  {
+			margin-top: 5%;
+			text-align: center;
+		}
+		#reset {
+			text-align: center;
+		}
+		body {
+			background-image: url("scales.png");
+		}
+		div.transbox {
+		  margin: 5%;
+		  background-color: #ffffff;
+		  border: 1% solid black;
+		  opacity: 0.8;
+		}
+	</style>
+</head>
+<body>
+
+	<h1><div class="transbox">What Dragon Are You?</div></h1>
+    
+    <form name="quiz">
+    
+  <section class="questions" id="quest1">
+  	<div class="transbox">
+           <h3>How do you see your future self?<br></h3>
+
+		  <div>  
+			<input TYPE="radio" NAME="question1" VALUE="1">With a dragon rider
+		  </div>
+
+		   <div>
+			<input TYPE="radio" NAME="question1" VALUE="2">Ruling over other dragons
+		   </div>
+
+			<div>
+				<input TYPE="radio" NAME="question1" VALUE="3">Surrounded by gold and treasures
+			</div>
+			
+			<div>
+				<input TYPE="radio" NAME="question1" VALUE="4">On a permanent vacation
+			</div>
+	</div>		
+		</section>
+			
+			
+			
+	    <section class="questions" id="quest2">
+	    	<div class="transbox">
+           <h3>How are you with humans?<br></h3>
+
+		  <div>  
+			<input TYPE="radio" NAME="question2" VALUE="1">Loving
+		  </div>
+
+		   <div>
+			<input TYPE="radio" NAME="question2" VALUE="2">Wants to kill them all
+		   </div>
+
+			<div>
+				<input TYPE="radio" NAME="question2" VALUE="3">If they don't bother me, I won't bother them
+			</div>
+			
+			<div>
+				<input TYPE="radio" NAME="question2" VALUE="4">What's a human?
+			</div>
+			</div>
+		</section>
+			
+			
+	    <section class="questions" id="quest3">
+	    	<div class="transbox">
+           <h3>What kind of leader are you?<br></h3>
+
+		  <div>  
+			<input TYPE="radio" NAME="question3" VALUE="1">Lead by example
+		  </div>
+
+		   <div>
+			<input TYPE="radio" NAME="question3" VALUE="2">Lead by power
+		   </div>
+
+			<div>
+				<input TYPE="radio" NAME="question3" VALUE="3">Lead by wealth
+			</div>
+			
+			<div>
+				<input TYPE="radio" NAME="question3" VALUE="4">I don't want to be a leader
+			</div>
+			</div>
+		</section>
+		
+		
+	    <section class="questions" id="quest4">
+	    	<div class="transbox">
+           <h3>What is your favorite color?<br></h3>
+
+		  <div>  
+			<input TYPE="radio" NAME="question4" VALUE="1">Black
+		  </div>
+
+		   <div>
+			<input TYPE="radio" NAME="question4" VALUE="2">Red
+		   </div>
+
+			<div>
+				<input TYPE="radio" NAME="question4" VALUE="3">Gold
+			</div>
+			
+			<div>
+				<input TYPE="radio" NAME="question4" VALUE="4">Purple
+			</div>
+			</div>
+		</section>
+	    
+	
+
+	  
+			<div id="submit"> 
+			 <input TYPE="button" VALUE="What are You?" onClick="computeForm(this.form)">
+			</div> 
+			
+			<div id="reset"> 
+			 <input TYPE="button" VALUE="Reset" onClick="reset(this.form)">
+			</div> 
+
+    </form>
+    
+    
+    
+   <script>
+   
+ 
+
+    function computeForm(form) {
+        
+      let qNum = 1;  
+      let choice = 0;
+      let  total = 0;
+    
+
+	  for (qNum = 1; qNum <= 4; qNum++) {
+		  let radio_inputs = document.forms['quiz'].elements['question'+ qNum];
+			   for (let i = 0; i < radio_inputs.length; i++) {
+				   if (radio_inputs[i].checked) {
+					  choice = radio_inputs[i].value;
+					  }  // closes condition on checked
+			   } // closes for loop on radios
+					
+          total = total + parseInt(choice);
+          
+         }  // closes for loop on questions
+       
+/// as an example, this script use switch statement instead of "if and else if" (either will work)
+
+		switch(total) {
+		case 4:
+		  alert("You're Toothless! You love flying, playing, and eating fish.");
+		  break;
+		case 5:
+		  alert("You're Toothless! You love flying, playing, and eating fish.");
+		  break;
+		case 6:
+		  alert("You're Toothless! You love flying, playing, and eating fish.");
+		  break;
+		case 7:
+		  alert("You're Alduin! You're Skyrim's fearsome dragon who wants to rule the mortal world.");
+		  break;
+		case 8:
+		  alert("You're Alduin! You're Skyrim's fearsome dragon who wants to rule the mortal world.");
+		  break;
+		case 9:
+		  alert("You're Alduin! You're Skyrim's fearsome dragon who wants to rule the mortal world.");
+		  break;
+		case 10:
+		  alert("You're Smaug! You want to be left alone with all your gold until the end of time.");
+		  break;
+		case 11:
+		  alert("You're Spryo! You're tired of saving the world and just want to relax.");
+		  break;
+		case 12:
+		  alert("You're Smaug! You want to be left alone with all your gold until the end of time.");
+		  break;
+		case 13:
+		  alert("You're Spryo! You're tired of saving the world and just want to relax.");
+		  break;
+		case 14:
+		  alert("You're Spryo! You're tired of saving the world and just want to relax.");
+		  break;
+		case 15:
+		  alert("You're Spryo! You're tired of saving the world and just want to relax.");
+		  break;
+		case 16:
+		  alert("You're Spryo! You're tired of saving the world and just want to relax.");
+		  break;
+	  } 
+
+    
+    
+    }  // this closes computeForm
+    
+
+
+    </script>
+
+
+
+
+</body>
+</html>
